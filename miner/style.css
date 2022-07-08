@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: #323030;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.container{
+    width: 1280px;
+    margin: 0 auto; 
+}
+
+.login_txt{
+    margin-top: 50px;
+    
+    text-align: center;
+    color: #FFD700;
+    font-size: 36px;
+}
+
+.login_inputs{
+    
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-bottom: 100px;
+}
+
+.input{
+    width: 250px;
+    color: white;
+    background-color: black;
+}
+.login_inputs label{
+    color: #cdbea7;
+}
+
+.submit{
+    margin-top: 50px;
+    padding: 15px 15px 15px 15px;
+    color: #323030;
+    background-color: #cdbea7;
+    transition: .4s;
+}   
+
+.submit__label{
+    margin-left: 200px;
+}
+
+.submit:hover{
+    background-color: #FFD700;
+    color: black;
+}
