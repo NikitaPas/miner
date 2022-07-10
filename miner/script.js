@@ -1,11 +1,20 @@
-var name;
-var balance;
+let inputName = document.getElementById("name")
+let inputBalance = document.getElementById("balance");
 
-var startBtn = document.getElementById("submit");
-startBtn.onclick = function(){
-    name = document.start.nick.value;
-    balance = document.start.bal.value;
-}
+let name = document.getElementById("name__game");
+let balance = document.getElementById("balance__game");
 
-console.log(name);
-console.log(balance);
+var hideLogin = document.getElementsByClassName("container");
+var showGame = document.getElementsByClassName("container__game");
+
+document.getElementById("submit").addEventListener("click", (e) =>{
+    e.preventDefault();
+    name.textContent = "Name: " + inputName.value;
+    balance.textContent = "Balance: " + inputBalance.value;
+    for(var i = 0; i < hideLogin.length; i++){
+        hideLogin[i].style.display = "none";
+    }
+    for(var j = 0; j < showGame.length; j++){
+        showGame[j].style.display = "block";
+    }
+})
