@@ -1,7 +1,6 @@
 let inputName = document.getElementById("name")
 let inputBalance = document.getElementById("balance");
 
-let bal;
 
 let name = document.getElementById("name__game");
 let balance = document.getElementById("balance__game");
@@ -9,10 +8,12 @@ let balance = document.getElementById("balance__game");
 var hideLogin = document.getElementsByClassName("container");
 var showGame = document.getElementsByClassName("container__game");
 
+let money;
+
 console.log(hideLogin);
 document.getElementById("submit").addEventListener("click", (e) =>{
     e.preventDefault();
-    bal = inputBalance.value;
+    var bal = inputBalance.value;
     name.textContent = "Name: " + inputName.value;
     balance.textContent = "Balance: " + inputBalance.value;
     for(var i = 0; i < hideLogin.length; i++){
@@ -21,10 +22,11 @@ document.getElementById("submit").addEventListener("click", (e) =>{
     for(var j = 0; j < showGame.length; j++){
         showGame[j].style.display = "block";
     }
+    money = Number(bal);
+    console.log(money);
 })
 
 let arrGame = [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0];
-
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
   }
@@ -38,6 +40,7 @@ for(var b = 0; b < matrix.length; b++){
 console.log(arrGame);
 console.log(matrix);
 
+
 document.querySelector('.blocks').addEventListener('click', e => {
     // e.target - целевой элемент
     let content = e.target.innerHTML;
@@ -45,6 +48,8 @@ document.querySelector('.blocks').addEventListener('click', e => {
     console.info(`Содержимое элемента: "${content}"!`);
     if(content == "1"){
         console.log("yes")
+        money += 50;
+        balance.textContent = "Balance: " + money + " btc";
     }
     else{
         console.log("no")
